@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container">123</div>
+  <div id="app">app组件</div>
 </template>
 
 <script>
