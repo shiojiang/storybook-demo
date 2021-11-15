@@ -32,20 +32,15 @@
       <j-button type="warning" icon="j-icon-star-off" circle></j-button>
       <j-button type="danger" icon="j-icon-delete" circle></j-button>
     </div>
-    <!-- <div class="row">
-      <j-button @click="handClick">点击事件</j-button>
-    </div> -->
     <div class="row">
       <j-button >默认按钮</j-button>
       <j-button size="medium">中等按钮</j-button>
       <j-button size="small">小型按钮</j-button>
       <j-button size="mini">超小按钮</j-button>
     </div>
-    <!-- <div class="row">
-      <j-button>仅文字</j-button>
-      <j-button type="primary" icon="j-icon-search"></j-button>
-      <j-button type="success" icon="j-icon-search">文字+图标</j-button>
-    </div> -->
+    <div class="row">
+      <j-button @click="handClick">点击事件</j-button>
+    </div>
   </div>
 </template>
 

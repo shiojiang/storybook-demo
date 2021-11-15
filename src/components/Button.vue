@@ -2,7 +2,6 @@
   <button
   class="j-button"
   :class="[typeClass, plainClass, roundClass, circleClass, sizeClass]"
-  :disabled="disabled"
   @click="handClick"
   >
   <!-- 如果未传入icon则隐藏i -->
@@ -19,7 +18,10 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'default'
+      default: 'default',
+      validator: (type) => {
+        return ['primary', 'success', 'info', 'warning', 'danger', 'default'].indexOf(type) !== -1;
+      },
     },
     plain: {
       type: Boolean,
@@ -39,7 +41,10 @@ export default {
     },
     size: {
       type: String,
-      default: 'default'
+      default: 'default',
+      validator: (size) => {
+        return ['mini', 'small', 'medium', 'default'].indexOf(size) !== -1;
+      },
     },
   },
   computed: {
@@ -65,7 +70,6 @@ export default {
       return `j-button-${this.size}`;
     },
   },
-  // 对props中的参数进行校验(待做)
   created() {
   },
   methods: {
@@ -236,11 +240,6 @@ export default {
 // 表示.j-button类下面包含j-icon-后面的span
 .j-button [class*=j-icon-]+span{
   margin-left: 5px;
-}
-// disabled属性
-.j-button.is-disabled{
-  cursor: not-allowed;
-// is-disabled样式还需优化
 }
 // size属性
 .j-button-default{
