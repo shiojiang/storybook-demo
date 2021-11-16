@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import JButton from './components/Button.vue'
+import JButton from './components/Button1.vue'
 import './assets/fonts/font.scss'
 
 // 全局注册组件
