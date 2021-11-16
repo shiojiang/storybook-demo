@@ -18,7 +18,7 @@ export default {
     // },
     icon: {
       control: { type: 'select'},
-      options: ['j-icon-search', 'j-icon-delete','j-icon-edit'],
+      options: [ 'j-icon-edit', 'j-icon-check', 'j-icon-message', 'j-icon-star-off', 'j-icon-delete'],
     },
     size: {
       control: { type: 'select' },
@@ -31,6 +31,11 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { JButton },
   template: '<j-button @onClick="onClick" v-bind="$props">按钮</j-button>',
+});
+const TemplateIcon = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { JButton },
+  template: '<j-button @onClick="onClick" v-bind="$props"></j-button>',
 });
 
 export const 类型 = Template.bind({});
@@ -47,10 +52,11 @@ export const 圆角 = Template.bind({});
   round: true,
   type: 'primary',
 };
-export const 图标 = Template.bind({});
+export const 图标 = TemplateIcon.bind({});
 图标.args = {
   icon: 'j-icon-edit',
   type: 'primary',
+  circle: true,
 };
 export const 尺寸 = Template.bind({});
 尺寸.args = {
