@@ -34,8 +34,8 @@ export const 类型 = Template.bind({});
 类型.args = {
   type: 'primary',
 };
-export const 镂空类型 = Template.bind({});
-镂空类型.args = {
+export const 镂空 = Template.bind({});
+镂空.args = {
   plain: true,
   type: 'primary',
 };
