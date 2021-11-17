@@ -8,14 +8,6 @@ export default {
       control: { type: 'select' },
       options: ['primary', 'success', 'info', 'warning', 'danger', 'default'],
     },
-    // plain: {
-    //   control: { type: 'select'},
-    //   options: [false, true],
-    // },
-    // round: {
-    //   control: { type: 'select'},
-    //   options: [false, true],
-    // },
     icon: {
       control: { type: 'select'},
       options: [ 'j-icon-edit', 'j-icon-check', 'j-icon-message', 'j-icon-star-off', 'j-icon-delete'],
@@ -42,8 +34,8 @@ export const 类型 = Template.bind({});
 类型.args = {
   type: 'primary',
 };
-export const 镂空 = Template.bind({});
-镂空.args = {
+export const 镂空类型 = Template.bind({});
+镂空类型.args = {
   plain: true,
   type: 'primary',
 };
@@ -58,10 +50,3 @@ export const 图标 = TemplateForIcon.bind({});
   type: 'primary',
   circle: true,
 };
-export const 尺寸 = Template.bind({});
-尺寸.args = {
-  size: 'default',
-  type: 'primary',
-};
-
-// 注：circle属性在传入icon且未传入文本时使用
