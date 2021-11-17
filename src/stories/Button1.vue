@@ -3,14 +3,14 @@
   class="j-button"
   :class="[typeClass,
   plainClass, roundClass,
-  (icon&&$slots.default)||(!icon&&$slots.default)?'':circleClass,
+  (icon&&label)||(!icon&&label)?'':circleClass,
   sizeClass]"
   @click="onClick"
   >
   <!-- 若未传入icon则隐藏i -->
     <i v-if="icon" :class="icon"></i>
   <!-- 若未传入插槽则隐藏span -->
-    <span v-if="$slots.default"><slot /></span>
+    <span v-if="$slots.default&&label"><slot /></span>
   </button>
 </template>
 
@@ -50,6 +50,10 @@ export default {
         return ['mini', 'small', 'medium', 'default'].indexOf(size) !== -1;
       },
     },
+    label: {
+        type: String,
+        default: '',
+    }
   },
   computed: {
     typeClass() {
@@ -75,6 +79,7 @@ export default {
     },
   },
   created() {
+    console.log(this.$slots);
   },
   methods: {
     // 触发父组件click
