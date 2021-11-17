@@ -1,12 +1,15 @@
 <template>
   <button
   class="j-button"
-  :class="[typeClass, plainClass, roundClass, circleClass, sizeClass]"
+  :class="[typeClass,
+  plainClass, roundClass,
+  (icon&&$slots.default)||(!icon&&$slots.default)?'':circleClass,
+  sizeClass]"
   @click="onClick"
   >
-  <!-- 如果未传入icon则隐藏i -->
+  <!-- 若未传入icon则隐藏i -->
     <i v-if="icon" :class="icon"></i>
-  <!-- 如果未传入插槽则隐藏span -->
+  <!-- 若未传入插槽则隐藏span -->
     <span v-if="$slots.default"><slot /></span>
   </button>
 </template>

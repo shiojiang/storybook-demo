@@ -8,14 +8,6 @@ export default {
       control: { type: 'select' },
       options: ['primary', 'success', 'info', 'warning', 'danger', 'default'],
     },
-    // plain: {
-    //   control: { type: 'select'},
-    //   options: [false, true],
-    // },
-    // round: {
-    //   control: { type: 'select'},
-    //   options: [false, true],
-    // },
     icon: {
       control: { type: 'select'},
       options: [ 'j-icon-edit', 'j-icon-check', 'j-icon-message', 'j-icon-star-off', 'j-icon-delete'],
@@ -32,7 +24,7 @@ const Template = (args, { argTypes }) => ({
   components: { JButton },
   template: '<j-button @onClick="onClick" v-bind="$props">按钮</j-button>',
 });
-const TemplateIcon = (args, { argTypes }) => ({
+const TemplateForIcon = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { JButton },
   template: '<j-button @onClick="onClick" v-bind="$props"></j-button>',
@@ -52,16 +44,9 @@ export const 圆角 = Template.bind({});
   round: true,
   type: 'primary',
 };
-export const 图标 = TemplateIcon.bind({});
+export const 图标 = TemplateForIcon.bind({});
 图标.args = {
   icon: 'j-icon-edit',
   type: 'primary',
   circle: true,
 };
-export const 尺寸 = Template.bind({});
-尺寸.args = {
-  size: 'default',
-  type: 'primary',
-};
-
-// 注：circle属性在传入icon且未传入文本时使用
