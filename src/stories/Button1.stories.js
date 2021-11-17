@@ -32,7 +32,7 @@ const Template = (args, { argTypes }) => ({
   components: { JButton },
   template: '<j-button @onClick="onClick" v-bind="$props">按钮</j-button>',
 });
-const TemplateIcon = (args, { argTypes }) => ({
+const TemplateForIcon = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { JButton },
   template: '<j-button @onClick="onClick" v-bind="$props"></j-button>',
@@ -52,7 +52,7 @@ export const 圆角 = Template.bind({});
   round: true,
   type: 'primary',
 };
-export const 图标 = TemplateIcon.bind({});
+export const 图标 = TemplateForIcon.bind({});
 图标.args = {
   icon: 'j-icon-edit',
   type: 'primary',
