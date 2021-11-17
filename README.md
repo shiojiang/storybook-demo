@@ -1,24 +1,40 @@
 # storybook-demo
 
-## Project setup
+## 项目设置
+
+### 安装依赖
+
 ```
 npm install
+#or
+yarn
 ```
+### 可以根据目前所处理的应用程序的不同部分来决定同时运行下述中的一个或者多个。
 
-### Compiles and hot-reloads for development
+### 开发环境运行
 ```
+# 运行storybook
 npm run storybook
+
+# 运行Vue
+npm run serve
 ```
 
-### Compiles and minifies for production
+### 打包生产环境代码
 ```
 npm run build-storybook
+
+npm run build
 ```
+## storybook目录说明
+
+根目录生成的 `.storybook`为 storybook 默认配置目录
+
+`src/stories` 目录为 storybook 页面组件目录
 
 ## 组件Demo
 
 ### 按钮(JButton)
-
 
 | 属性   | 值      |                             描述                             |
 | ------ | ------- | :----------------------------------------------------------: |
@@ -34,6 +50,3 @@ npm run build-storybook
 | 事件  | 值       | 描述     |
 | ----- | -------- | -------- |
 | click | Function | 点击事件 |
-
-
----
