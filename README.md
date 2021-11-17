@@ -1,6 +1,6 @@
 # storybook-demo
 
-## 项目设置
+## 项目配置
 
 ### 安装依赖
 
@@ -31,7 +31,6 @@ npm run build
 根目录生成的 `.storybook`为 storybook 默认配置目录
 
 `src/stories` 目录为 storybook 页面组件目录
-
 
 ## 组件Demo
 
