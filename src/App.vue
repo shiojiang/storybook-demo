@@ -41,15 +41,19 @@
     <div class="row">
       <j-button @click="handClick">点击事件</j-button>
     </div>
+    <DatePickers></DatePickers>
   </div>
 </template>
 
 <script>
 
+import DatePickers from "../src/components/datePicker.vue";
+
 
 export default {
   name: 'App',
   components: {
+    DatePickers
   },
   methods: {
     handClick(e) {
