@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   "stories": [
     "../src/**/*.stories.mdx",
@@ -6,5 +8,15 @@ module.exports = {
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials"
-  ]
+  ],
+  webpackFinal: async (config) => {
+
+      config.module.rules.push({
+        test: /\.less$/,
+        loaders: ["style-loader", "css-loader","less-loader"],
+        include: path.resolve(__dirname, '../')
+      });
+
+      return config
+    }
 }

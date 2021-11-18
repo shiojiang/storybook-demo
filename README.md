@@ -1,6 +1,6 @@
 # storybook-demo
 
-## Project setup
+## 项目设置
 
 ### 安装依赖
 
@@ -26,6 +26,10 @@ npm run build-storybook
 
 npm run build
 ```
+## 说明
 
+根目录生成的 `.storybook`为 storybook 默认配置目录
+
+`src/stories` 目录为 storybook 页面组件目录
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
