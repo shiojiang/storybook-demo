@@ -30,11 +30,4 @@ Primary.args = {
 //   primary: true,
 //   label: 'Button',
 };
-export const Year = Template.bind({});
-Year.args = {
-  format: "yyyy",
-};
-export const allDate = Template.bind({});
-Year.args = {
-  format: "yyyy-MM-dd HH:mm:ss",
-};
+

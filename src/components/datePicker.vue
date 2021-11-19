@@ -10,9 +10,17 @@
 import { formatDate } from "../lib/date.js";
 export default {
   props: {
+    //可选择时间
     placeholder: { required: false, default: "选择时间" },
+    //传入时间格式为['yyyy-MM-dd','yyyy-MM-dd']
     value: { type: Array },
+    //选择格式 默认为"yyyy-MM-dd"，可选项"tiemstamp"
     format: { required: false, default: "yyyy-MM-dd" },
+    /*
+    *@default默认为true
+    *true：默认值
+    *false:不选择默认选项，前三个可用
+    */
     default: { required: false, default: true }
   },
   name: "datePicker",

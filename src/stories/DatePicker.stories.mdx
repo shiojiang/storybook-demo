@@ -1,0 +1,50 @@
+<!--- DatePickers.stories.mdx -->
+
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import DatePickers from "../components/datePicker.vue";
+
+<Meta title="MDX/DatePickers" component={DatePickers} />
+
+# Input
+
+With `MDX`, we can define a story for `DatePickers` right in the middle of our
+Markdown documentation.
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { DatePickers },
+  template: '<DatePickers v-bind="$props" />',
+});
+
+## 参数
++ 时间段：value ['yyyy-MM-dd','yyyy-MM-dd']
++ 时间格式：format 默认为"yyyy-MM-dd"，可选项"tiemstamp",时间戳还是日期格式
++ 提示语： placeholder
++ 是否默认：default 默认为true,true：默认值,false:不选择默认选项，前三个参数可用
+
+
+### 默认
+<Canvas>
+  <Story name="Primary">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### 非默认
+#### 更改提示语
+<Canvas>
+  <Story name="changePlaceholder" args={{default: false,placeholder: '更改提示语'}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+#### 更改时间段
+<Canvas>
+  <Story name="changeDate" args={{default: false,value: ['2022-2-2','2022-8-2']}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+

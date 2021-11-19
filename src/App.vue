@@ -41,7 +41,7 @@
     <div class="row">
       <j-button @click="handClick">点击事件</j-button>
     </div>
-    <DatePickers></DatePickers>
+    <DatePickers :default='false' :placeholder='`test-txy`' :format='`timestamp`' :value="['2021-11-12','2021-11-14']"></DatePickers>
   </div>
 </template>
 
