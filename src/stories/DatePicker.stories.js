@@ -8,22 +8,33 @@ export default {
   title: 'Example/DatePickers',
   component: DatePickers,
   argTypes: {
-    // backgroundColor: { control: 'color' },
-    // size: {
-    //   control: { type: 'select' },
-    //   options: ['small', 'medium', 'large'],
-    // },
+    text: {
+      description: "用于选择或输入日期",
+      defaultValue: { summary: "选择日期范围" },
+    },
+    type: {
+      description: "类型",
+      defaultValue: { summary: "yyyy-MM-dd" },
+    }
   },
-};
+}
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { DatePickers },
-  template: '<DatePickers ></DatePickers>',
+  template: '<DatePickers v-bind="$props"></DatePickers>',
 });
 
 export const Primary = Template.bind({});
 Primary.args = {
 //   primary: true,
 //   label: 'Button',
+};
+export const Year = Template.bind({});
+Year.args = {
+  format: "yyyy",
+};
+export const allDate = Template.bind({});
+Year.args = {
+  format: "yyyy-MM-dd HH:mm:ss",
 };
