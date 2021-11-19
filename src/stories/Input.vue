@@ -1,8 +1,7 @@
 <template>
   <div class="input">
     <el-input v-model="input" :placeholder="placeholder" 
-    :disabled="disabled" :clearable="clearable"
-    :show-password="showPassword" :type="type"></el-input>
+    :disabled="disabled" :clearable="clearable" :type="type"></el-input>
   </div>
 </template>
 
@@ -18,7 +17,6 @@ export default {
     placeholder: { required: false, default: "请输入内容" },
     disabled: { required: false, default: false },
     clearable: { required: false, default: false },
-    showPassword: { required: false, default: false },
     type: { required: false, default: 'input' },
   },
   components:{
