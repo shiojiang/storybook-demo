@@ -10,7 +10,7 @@
 import { formatDate } from "../lib/date.js";
 export default {
   props: {
-    //可选择时间
+    //placeholder
     placeholder: { required: false, default: "选择时间" },
     //传入时间格式为['yyyy-MM-dd','yyyy-MM-dd']
     value: { type: Array },
