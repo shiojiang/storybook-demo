@@ -5,7 +5,7 @@ Vue.use(ElementUI)
 import DatePickers from "../components/datePicker.vue";
 
 export default {
-  title: 'Example/DatePickers',
+  title: '组件Demo/时间选择器',
   component: DatePickers,
   argTypes: {
     text: {
