@@ -1,0 +1,30 @@
+<!--- Input.stories.mdx -->
+
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+import Input from './Input.vue';
+
+<Meta title="MDX/Input" component={Input} />
+
+# Checkbox
+
+With `MDX`, we can define a story for `Input` right in the middle of our
+Markdown documentation.
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Input },
+  template: '<Input v-bind="$props" />',
+});
+
+<Canvas>
+  <Story name="Primary">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="PassWord" args={{type: 'password'}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
