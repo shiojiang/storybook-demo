@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import './button1.scss'
+import './button.scss'
 export default {
   name: "j-button",
   // 接收父组件传入的属性

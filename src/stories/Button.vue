@@ -1,54 +1,91 @@
 <template>
-  <button type="button" :class="classes" @click="onClick" :style="style">{{ label }}</button>
+  <button
+  class="j-button"
+  :class="[typeClass,
+  plainClass, roundClass,
+  (icon&&label)||(!icon&&label)?'':circleClass,
+  sizeClass]"
+  @click="onClick"
+  >
+  <!-- 若未传入icon则隐藏i -->
+    <i v-if="icon" :class="icon"></i>
+  <!-- 若未传入插槽则隐藏span -->
+    <span v-if="$slots.default&&label"><slot /></span>
+  </button>
 </template>
 
 <script>
-import './button.css';
-
+import './button.scss'
 export default {
-  name: 'my-button',
-
+  name: "j-button",
+  // 接收父组件传入的属性
   props: {
-    label: {
+    type: {
       type: String,
-      required: true,
+      default: 'default',
+      validator: (type) => {
+        return ['primary', 'success', 'info', 'warning', 'danger', 'default'].indexOf(type) !== -1;
+      },
     },
-    primary: {
+    plain: {
       type: Boolean,
-      default: false,
+      default: false
+    },
+    round: {
+      type: Boolean,
+      default: false
+    },
+    circle: {
+      type: Boolean,
+      default: false
+    },
+    icon: {
+      type: String,
+      default: ''
     },
     size: {
       type: String,
-      default: 'medium',
-      validator: function (value) {
-        return ['small', 'medium', 'large'].indexOf(value) !== -1;
+      default: 'default',
+      validator: (size) => {
+        return ['mini', 'small', 'medium', 'default'].indexOf(size) !== -1;
       },
     },
-    backgroundColor: {
-      type: String,
-    },
+    label: {
+        type: String,
+        default: '',
+    }
   },
-
   computed: {
-    classes() {
-      return {
-        'storybook-button': true,
-        'storybook-button--primary': this.primary,
-        'storybook-button--secondary': !this.primary,
-        [`storybook-button--${this.size}`]: true,
-      };
+    typeClass() {
+      return `j-button-${this.type}`;
     },
-    style() {
+    plainClass() {
       return {
-        backgroundColor: this.backgroundColor,
-      };
+        'is-plain': this.plain
+      }
+    },
+    roundClass() {
+      return {
+        'is-round': this.round
+      }
+    },
+    circleClass() {
+      return {
+        'is-circle': this.circle
+      }
+    },
+    sizeClass() {
+      return `j-button-${this.size}`;
     },
   },
-
+  created() {
+    console.log(this.$slots);
+  },
   methods: {
+    // 触发父组件click
     onClick() {
-      this.$emit('onClick');
-    },
-  },
-};
+      this.$emit('onClick')
+    }
+  }
+}
 </script>
